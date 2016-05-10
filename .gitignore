@@ -49,7 +49,6 @@ app/app.iml
 .gradle
 *.lock
 *idea*
-*.gradle*
 .gradle/2.10/taskArtifacts/cache.properties.lock
 .gradle/2.10/taskArtifacts/fileHashes.bin
 .gradle/2.10/taskArtifacts/fileSnapshots.bin
