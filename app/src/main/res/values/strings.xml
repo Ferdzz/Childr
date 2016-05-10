@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Childr</string>
     <string name="refuse">Refuse</string>
+    <string name="title_activity_swipe_screen">SwipeScreen</string>
 </resources>

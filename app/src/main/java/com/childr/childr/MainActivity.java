@@ -1,21 +1,19 @@
 package com.childr.childr;
 
-import android.graphics.Point;
-import android.support.v7.app.ActionBar;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,45 +22,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // card like effect
-        SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.fling_adapter);
+        final RadioButton rdGirlNames = (RadioButton) findViewById(R.id.girl_names);
+        final RadioButton rdBoyNames = (RadioButton) findViewById(R.id.boy_names);
+        final RadioButton rdBothNames = (RadioButton) findViewById(R.id.both_names);
 
-        final ArrayList<String> a = new ArrayList<>();
-        a.add("Frederic");
-        a.add("Didier");
-        a.add("Camille");
-        a.add("David");
-        a.add("Fungle");
-        a.add("Ellie");
-        a.add("Vincent");
+        Button btnConfirm = (Button) findViewById(R.id.btnConfirm);
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item, R.id.helloText, a);
-
-        flingContainer.setAdapter(adapter);
-        flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
+        assert btnConfirm != null;
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void removeFirstObjectInAdapter() {
-                a.remove(0);
-                adapter.notifyDataSetChanged();
+            public void onClick(View v) {
+                String gender = null;
+
+                if (rdGirlNames.isChecked()) {
+                    gender = "girl";
+                } else if (rdBoyNames.isChecked()) {
+                    gender = "boy";
+                } else if (rdBothNames.isChecked()) {
+                    gender = "both";
+                }
+
+                if (gender != null) {
+                    Intent intent = new Intent(getApplicationContext(), SwipeScreen.class);
+                    intent.putExtra("gender", gender);
+
+                    startActivity(intent);
+                }
             }
-
-            @Override
-            public void onLeftCardExit(Object o) {
-                Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onRightCardExit(Object o) {
-                Toast.makeText(MainActivity.this, "Liked", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onAdapterAboutToEmpty(int i) {
-
-            }
-
-            @Override
-            public void onScroll(float v) { }
         });
     }
 }

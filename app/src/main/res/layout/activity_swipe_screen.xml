@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+tools:context="com.childr.childr.MainActivity"
+android:orientation="vertical"
+android:gravity="top|center">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Baby name"
+    android:id="@+id/textView"
+    android:textSize="30dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20dp" />
+
+<com.lorentzos.flingswipe.SwipeFlingAdapterView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fling_adapter"
+    android:layout_gravity="center_horizontal" />
+
+</FrameLayout>
+

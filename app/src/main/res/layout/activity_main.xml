@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context="com.childr.childr.MainActivity"
-    android:orientation="vertical"
-    android:gravity="top|center">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.childr.childr.SwipeScreen"
+    android:background="@color/accent_material_dark">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Baby name"
-        android:id="@+id/textView"
-        android:textSize="30dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        android:orientation="vertical"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerVertical="true">
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Girl Names"
+            android:id="@+id/girl_names"/>
+        <RadioButton
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:text="Boy Names"
+            android:id="@+id/boy_names"/>
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Both Genders"
+            android:id="@+id/both_names"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Confirm"
+            android:id="@+id/btnConfirm"/>
+    </RadioGroup>
 
-    <com.lorentzos.flingswipe.SwipeFlingAdapterView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fling_adapter"
-        android:layout_gravity="center_horizontal" />
-
-</FrameLayout>
+</RelativeLayout>

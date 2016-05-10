@@ -12,7 +12,7 @@
         android:background="#E339"
         android:gravity="center"
         tools:text="string"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="fill_parent" />
 
     <View
