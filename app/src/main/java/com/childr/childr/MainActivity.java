@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 public class MainActivity extends AppCompatActivity {
 
     @Override
+    @SuppressWarnings("ConstantConditions") // removes the stupid warnings about the NPEs
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

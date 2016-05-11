@@ -22,6 +22,7 @@ import java.util.Random;
 public class SwipeScreenActivity extends AppCompatActivity {
 
     @Override
+    @SuppressWarnings("ConstantConditions") // removes the stupid warnings about the NPEs
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipe_screen);
@@ -93,6 +94,15 @@ public class SwipeScreenActivity extends AppCompatActivity {
 
             @Override
             public void onScroll(float v) { }
+        });
+
+        findViewById(R.id.btn_more_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NameInformationActivity.class);
+                intent.putExtra("name", chosenOne.get(0));
+                startActivity(intent);
+            }
         });
     }
 }

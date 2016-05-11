@@ -23,5 +23,13 @@ android:gravity="top|center">
     android:id="@+id/fling_adapter"
     android:layout_gravity="center_horizontal" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More information about this name"
+        android:id="@+id/btn_more_info"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="20dp" />
+
 </FrameLayout>
 
