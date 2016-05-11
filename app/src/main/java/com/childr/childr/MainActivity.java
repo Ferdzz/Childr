@@ -4,16 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
-import android.widget.Toast;
-
-import com.lorentzos.flingswipe.SwipeFlingAdapterView;
-
-import java.util.ArrayList;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (gender != null) {
-                    Intent intent = new Intent(getApplicationContext(), SwipeScreen.class);
+                    Intent intent = new Intent(getApplicationContext(), SwipeScreenActivity.class);
                     intent.putExtra("gender", gender);
 
                     startActivity(intent);

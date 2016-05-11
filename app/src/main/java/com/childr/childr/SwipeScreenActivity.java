@@ -19,7 +19,7 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SwipeScreen extends AppCompatActivity {
+public class SwipeScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class SwipeScreen extends AppCompatActivity {
             chosenOne = bothNames;
         }
 
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item, R.id.helloText, chosenOne);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item, R.id.item_text, chosenOne);
 
         flingContainer.setAdapter(adapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
@@ -78,17 +78,17 @@ public class SwipeScreen extends AppCompatActivity {
 
             @Override
             public void onLeftCardExit(Object o) {
-                Toast.makeText(SwipeScreen.this, "Disliked", Toast.LENGTH_SHORT).show();
+                // disliked
             }
 
             @Override
             public void onRightCardExit(Object o) {
-                Toast.makeText(SwipeScreen.this, "Liked", Toast.LENGTH_SHORT).show();
+                // liked
             }
 
             @Override
             public void onAdapterAboutToEmpty(int i) {
-
+                // this is where we should load the next few names in the list
             }
 
             @Override

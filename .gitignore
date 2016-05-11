@@ -57,3 +57,4 @@ app/app.iml
 build/intermediates/dex-cache/cache.xml
 app/app.iml
 build/
+local.properties
