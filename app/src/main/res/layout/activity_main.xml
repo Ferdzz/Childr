@@ -8,38 +8,38 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SwipeScreenActivity"
-    android:background="@color/accent_material_dark">
+    android:background="@android:color/holo_orange_dark">
 
-    <RadioGroup
-        android:layout_width="fill_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentRight="false"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_centerVertical="true">
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Girl Names"
-            android:id="@+id/girl_names"/>
-        <RadioButton
-            android:layout_width="350dp"
-            android:layout_height="match_parent"
-            android:text="Boy Names"
-            android:id="@+id/boy_names"/>
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Both Genders"
-            android:id="@+id/both_names"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Confirm"
-            android:id="@+id/btnConfirm"/>
-    </RadioGroup>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Choose a Gender"
+        android:id="@+id/genderChoice"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/male_button"
+        android:layout_below="@+id/genderChoice"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/male_symbol" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/female_button"
+        android:layout_below="@+id/male_button"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/female_symbol" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/intersex_button"
+        android:layout_below="@+id/female_button"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/male_female_symbol" />
 </RelativeLayout>
