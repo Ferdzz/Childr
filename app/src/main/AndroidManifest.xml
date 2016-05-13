@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".SwipeScreenActivity" />
         <activity android:name=".NameInformationActivity" />
+        <activity android:name=".GenderChoice"></activity>
     </application>
 
 </manifest>

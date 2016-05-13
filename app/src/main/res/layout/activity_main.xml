@@ -7,52 +7,53 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".SwipeScreenActivity"
-    android:background="@android:color/holo_orange_dark">
+    tools:context="com.childr.childr.GenderChoice"
+    android:background="@android:color/holo_green_dark">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Choose a Gender"
-        android:id="@+id/genderChoice"
+        android:id="@+id/imageView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/childr_logo" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/genderChoice"
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start looking"
+        android:id="@+id/btn_start"
+        android:background="#588400"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true" />
 
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/female_button"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/female_symbol"
-            android:layout_weight="1"
-            android:background="@android:color/holo_orange_dark" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/btn_settings"
+        android:background="#588400"
+        android:layout_below="@+id/btn_start"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/male_button"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/male_symbol"
-            android:layout_weight="1"
-            android:background="@android:color/holo_orange_dark" />
-
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/intersex_button"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/male_female_symbol"
-            android:layout_weight="1"
-            android:background="@android:color/holo_orange_dark" />
-    </LinearLayout>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_info"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/info_icon"
+        android:background="@android:color/holo_green_dark" />
 
 </RelativeLayout>

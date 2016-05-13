@@ -1,53 +1,54 @@
 package com.childr.childr;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    Intent intent;
+    Toast toast;
+    String toastMsg;
+
     @Override
-    @SuppressWarnings("ConstantConditions") // removes the stupid warnings about the NPEs
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ImageButton btnGirl = (ImageButton) findViewById(R.id.female_button);
-        final ImageButton btnBoy = (ImageButton) findViewById(R.id.male_button);
-        final ImageButton btnIntersex = (ImageButton) findViewById(R.id.intersex_button);
+        toast = Toast.makeText(getApplicationContext(), toastMsg, Toast.LENGTH_SHORT);
 
-        assert btnGirl != null;
-        assert btnBoy != null;
-        assert btnIntersex != null;
-        btnGirl.setOnClickListener(new View.OnClickListener() {
+        Button btnStart = (Button) findViewById(R.id.btn_start);
+        Button btnSetting = (Button) findViewById(R.id.btn_settings);
+        ImageButton btnInfo = (ImageButton) findViewById(R.id.btn_info);
+
+        btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendIntent("girl");
+                intent = new Intent(getApplicationContext(), GenderChoice.class);
+                startActivity(intent);
             }
         });
-        btnBoy.setOnClickListener(new View.OnClickListener() {
+
+        btnSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendIntent("boy");
+                toast.setText("Not implemented");
+
+                toast.show();
             }
         });
-        btnIntersex.setOnClickListener(new View.OnClickListener() {
+
+        btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendIntent("both");
+                toast.setText("We are awesome");
+
+                toast.show();
             }
         });
-    }
-
-    public void sendIntent(String pExtra) {
-        Intent intent = new Intent(getApplicationContext(), SwipeScreenActivity.class);
-        intent.putExtra("gender", pExtra);
-
-        startActivity(intent);
     }
 }
